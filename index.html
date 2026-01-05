@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
+    <body style="margin : 0px; overflow: hidden;">
+        <a-scene embedded arjs>
+        <a-marker preset="hiro">
+            
+            <a-image
+                src="Assets/cartev1.png"
+                position="0 0.5 0"
+                rotation="-90 0 0"
+                width="2"
+                height="1.5">
+            </a-image>
+            <a-image
+                src="Assets/logo.png"
+                position="0.8 0.5 -1"
+                rotation="-90 0 0"
+                width="1.5"
+                height="1.5">
+            </a-image>
+            <a-image
+                src="Assets/iutlogo.jpg"
+                position="0.8 0.5 1"
+                rotation="-90 0 0"
+                width="0.5"
+                height="0.5">
+            </a-image>
+            <a-entity
+                id="btn-site"
+                class="clickable"
+                geometry="primitive: plane; width: 1.5; height: 0.5"
+                material="color: darkblue"
+                position="-1.8 0.5 0.5" 
+                rotation="-90 0 0"
+                text="value: GITHUB; align: center; color: white">
+            </a-entity>
+            <a-entity
+              id="btn-mail"
+                class="clickable"
+              geometry="primitive: plane; width: 1.5; height: 0.5"
+              material="color: darkblue"
+              position="-1.8 0.5 -0.5"
+                rotation="-90 0 0"
+              text="value: ME CONTACTER; align: center; color: white">
+            </a-entity>
+        </a-marker>
+            <a-camera
+                camera
+                cursor="rayOrigin: mouse"
+                raycaster="objects: .clickable">
+            </a-camera>
+            
+        </a-scene>
+        <script>
+          const btnSite = document.querySelector('#btn-site');
+            
+            
+          btnSite.addEventListener('click', () => {
+            window.location.href = 'https://github.com/Petru-Antone1Landi/CarteAR';
+              });
+
+            const btnMail = document.querySelector('#btn-mail');
+            
+          btnMail.addEventListener('click', () => {
+            window.location.href = 'mailto:petruajaccio@gmail.com';
+              });
+        </script>
+    </body>
+</html>
